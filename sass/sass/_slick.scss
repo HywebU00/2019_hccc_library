@@ -25,10 +25,10 @@
 }
 
 // slick._scss
-// 首頁大圖輪播 
+// 首頁大圖輪播
 .mpSlider {
     width: 100%;
-    padding-bottom: 3em;
+    padding-bottom: 2em;
     @include gutter(0);
     .img-container {
         @include aspect-ratio(5, 2); //PC版比例
@@ -48,6 +48,21 @@
             right: 2%;
         }
     }
+    .slick-dots{
+        li{
+            width: 12px;
+            height: 12px;
+            margin:0 6px;
+            button{
+                width: 12px;
+                height: 12px;
+                &:before{
+                    width: 12px;
+                    height: 12px;
+                }
+            }
+        }
+    }
 }
 
 // slick._scss
@@ -59,17 +74,18 @@
         @include gutter();
     }
     .slick-prev {
-        left: -15px;
+        left: -10px;
         top:50%;
     }
     .slick-next {
-        right: -15px;
+        right: -10px;
         top:50%;
     }
     .img-container {
         width: 165px;
         height: 55px;
         margin: 0px 15px;
+        background: rgba(#fff, 0);
         a {
             display: block;
             img {
@@ -79,10 +95,55 @@
         }
     }
 }
+.bookSlider{
+    padding:0 40px;
+    .img-container{
+        width: 185px;
+        height: 185px;
+        background: #fff;
+        border:1px solid #f7f7f7;
+        margin:0 auto;
+        img{
+            padding: 5px;
+        }
+    }
+    .slick-prev, .slick-next{
+        background-color: rgba(255,255,255,0);
+    }
+    .slick-prev {
+        left: -10px;
+        top:50%;
+    }
+    .slick-next {
+        right: -10px;
+        top:50%;
+    }
+}
+.cp_slider{
+    .slick-prev {
+        left: -10px;
+        top:50%;
+    }
+    .slick-next {
+        right: -10px;
+        top:50%;
+    }
+    .slick-dots{
+        bottom: -20px;
+    }
+}
 // slick dots
 .slick-dots {
+    @include screen("mobile"){
+        bottom: 10px;
+    }
     li {
+        width: 12px;
+        height: 12px;
+        margin:0 6px;
         button {
+            width: 12px;
+            height: 12px;
             &:hover,
             &:focus {
                 border: none !important;
@@ -93,6 +154,8 @@
             }
             &:before {
                 background: #666;
+                width: 12px;
+                height: 12px;
             }
         }
         &.slick-active {

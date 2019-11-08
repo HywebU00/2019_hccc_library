@@ -14,6 +14,7 @@
     Slick = (function() {
         var instanceUid = 0;
 
+
         function Slick(element, settings) {
             var _ = this,
                 dataSettings;
@@ -1474,7 +1475,7 @@
          *     .slick("setOption", { 'option': value, ... }, refresh )
          */
         var _ = this,
-            l, item, option, value, refresh = false,
+            l, item, option, value, refresh = true,
             type;
         if ($.type(arguments[0]) === 'object') {
             option = arguments[0];

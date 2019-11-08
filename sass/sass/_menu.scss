@@ -1,6 +1,6 @@
 .menu {
     @include box-sizing;
-    margin: 0 auto;
+    margin: .5em auto;
     min-height: 2.5em;
     position: relative;
     z-index: 99;
@@ -86,7 +86,7 @@
             a {
                 padding: .6em 1.2em;
                 color: #FFF;
-                font-weight: bold;
+                //font-weight: bold;
                 &:hover, &:focus {
                     background: $aHover;
                 }
@@ -214,15 +214,16 @@
                     background: #FFF;
                 }
                 >a {
-                    padding: .5em 1em;
+                    padding: .5em 2em;
                     min-height:2em;
                     line-height: 2em;
                     background: #FFF;
                     border-bottom: 1px solid #CCC;
+                    text-align: left;
                 }
                 &.hasChild {
                     >a {
-                        padding: .5em 1em;
+                        padding: .5em 2em;
                         color: #222;
                         background: #FFF;
                         padding-right: 36px;

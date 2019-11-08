@@ -1,15 +1,17 @@
 .fatfooter {
     @include make-fatfooter($fatfooter-length, 100%);
     @extend %clearfix;
-    overflow: hidden;
+    //overflow: hidden;
     padding-bottom: 1em;
     margin: 0 auto;
     background: $fatfooterBgColor;
+    position: relative;
+    z-index: 50;
     //   @include screen('mobile') {
     //     display: none;
     // }
     .container {
-        overflow: hidden;
+        //overflow: hidden;
         @include box-sizing;
         @include gutter;
     }
@@ -17,15 +19,19 @@
     .btn-fatfooter {
         font-size: .813em;
         display: block;
-        min-width: 6em;
+        width: 5em;
+        height: 6em;
         color: #FFF;
         border: none;
-        background: $aHover;
+        background: $fatfooterBgColor;
         position: absolute;
-        right: 1%;
+        left: 50%;
+        top:-30px;
+        margin-left: -2.5em;
         z-index: 90;
-        text-indent: -9999px;
-        @include border-radius(4px);
+        padding-top: 20px;
+        //text-indent: -9999px;
+        @include border-radius(50%);
         &:before {
             content: "";
             position: absolute;
@@ -36,13 +42,26 @@
             border-bottom: none;
             transform: rotate(-45deg);
             left: 50%;
-            top: 12px;
+            top: 18px;
             margin-left: -6px;
             transition: .3s ease-out;
+            z-index: 20;
         }
+        // &:after{
+        //     content:"";
+        //     position: absolute;
+        //     background:$fatfooterBgColor;
+        //     background-size:100%;
+        //     width: 140px;
+        //     height: 40px;
+        //     left: 50%;
+        //     top: -9px;
+        //     z-index: 10;
+        //     margin-left: -68px;
+        // }
         &:hover,
         &:focus {
-            background: darken($aHover, 10);
+            //background: darken($aHover, 10);
             color: #fff;
             text-decoration: none;
             cursor: pointer;
@@ -55,7 +74,7 @@
         &.close {
             &:before {
                 transform: rotate(135deg) !important;
-                top: 5px;
+                top: 10px;
             }
         }
     }
@@ -80,19 +99,28 @@
                 text-align: left;
                 vertical-align: top;
                 margin: 0 -5px 1em 0;
+                width: 14.2857%;
                 @include box-sizing;
+                @include screen('tablet') {
+                    width: 20%;
+                }
                 @include screen('mobile') {
                     display: block;
-                    margin:0 0 .4em
+                    margin:0 0 .4em;
+                    width: 100%;
                 }
                 a {
                     line-height: 1.5;
                     display: block;
                     font-weight: bold;
                     padding: .5em 0px;
+                    color:#fff;
                     @include box-sizing;
                     &:hover{
-                        box-shadow: none;
+                        text-shadow: 0 1px 1px rgba(#000, .3);
+                    }
+                    &:focus{
+                        box-shadow: 0 0px 0px 1px $primaryColor inset;
                     }
                 }
                 ul {
@@ -112,12 +140,15 @@
                         }
                         a {
                             display: block;
-                            @include aSetting_nocolor;
+                            //@include aSetting_nocolor;
+                            color: #fff;
+                            text-decoration: none;
+                            opacity:.9;
                             font-weight: normal;
                             text-align: left;
-                            font-size: .938em;
+                            font-size: .875em;
                             line-height: 1.5em;
-                            padding: .5em .2em;
+                            padding: .5em 1em .5em 0;
                             background: none;
                             @include screen('mobile') {
                                 padding:.3em .2em;

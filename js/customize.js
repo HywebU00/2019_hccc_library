@@ -21,7 +21,7 @@ $(function() {
         speed: 300,
         slidesToShow: 2,
         slidesToScroll: 1,
-        autoplay: true,
+        autoplay: false,
         arrow: true,
         lazyLoaded: true,
         lazyLoad: 'ondemand',
@@ -36,14 +36,63 @@ $(function() {
         },{
             breakpoint: 768,
             settings: {
-                slidesToShow: 4,
+                slidesToShow: 3,
                 slidesToScroll: 1,
                 arrows: true
             }
         },{
             breakpoint: 575,
             settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                arrows: true
+            }
+        }]
+    });
+    $('.bookSlider').slick({
+        mobileFirst: true,
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        autoplay: false,
+        arrow: true,
+        lazyLoaded: true,
+        lazyLoad: 'ondemand',
+        ease: 'ease',
+        responsive: [{
+            breakpoint: 1200,
+            settings: {
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                arrows: true
+            }
+        },{
+            breakpoint: 992,
+            settings: {
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                arrows: true
+            }
+        },{
+            breakpoint: 768,
+            settings: {
                 slidesToShow: 3,
+                slidesToScroll: 1,
+                arrows: true
+            }
+        },{
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                arrows: true
+            }
+        },{
+            breakpoint: 0,
+            settings: {
+                slidesToShow: 1,
                 slidesToScroll: 1,
                 arrows: true
             }
@@ -90,7 +139,7 @@ $(function() {
         }]
     });
     $('.cp_slider').slickLightbox({
-        caption: 'caption',
+        caption: false,
         lazyLoad: 'ondemand',
         useHistoryApi: 'true',
         ease: 'ease',

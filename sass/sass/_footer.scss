@@ -3,16 +3,20 @@ footer {
     @include clearfix;
     text-align: left;
     font-size: 0.813em;
-    padding: 1em 0;
+    padding: 0;
+    background: $fatfooterBgColor;
     .container {
         @include gutter;
-        >div {
-            padding-bottom: 1em;
-        }
+        // >div {
+        //     padding-bottom: 1em;
+        // }
+    }
+    .accesskey{
+        color:$fatfooterBgColor;
     }
     a {
         text-decoration: none;
-        color: $primaryColor;
+        color: #fff;
         &:hover,
         &:focus {
             color: darken($primaryColor, 10);
@@ -26,11 +30,12 @@ footer {
         @include gutter();
     }
     .footer_info {
-        @include make-xs-column(12);
-        @include make-sm-column(6);
-        @include make-md-column(6);
-        @include make-lg-column(6);
-        @include gutter();
+        border-color: #fff;
+        border-style: solid;
+        border-width: 1px 0 1px 0;
+        padding: .5em 0;
+        margin:2em 0;
+        opacity:.9;
     }
     .footer_icon {
         @include make-xs-column(12);
@@ -39,30 +44,56 @@ footer {
         @include make-lg-column(3);
         @include gutter();
     }
+    .footer_bottom{
+        background: $color-dark;
+        .update{
+            float: right;
+            li{
+                float: left;
+                color: #eee;
+                padding:.5em 1em;
+            }
+            @include screen('mobile') {
+                float: none;
+                padding-left: 0;
+                margin: 0;
+            }
+        }
+    }
     // 版權連結
     .footer_link {
         @include li-reset();
         @include clearfix();
+        margin:1em auto;
+        float: left;
+        @include screen('mobile') {
+            margin: .5em 0;
+        }
         li {
             float: left;
             display: block;
-            margin: 0px 5px 5px 0px;
+            margin: 0px 10px 0 10px;
+            @include screen('mobile') {
+                margin-left: 0;
+            }
             a {
                 display: block;
                 padding: .5em 1em;
-                background: $primaryColor;
-                color: #FFF;
+                background: none;
+                color: #eee;
                 border-radius:4px;
                 @include transition(all, .3s, ease-out);
                 &:hover,
                 &:focus {
-                    background: darken($primaryColor, 10);
+                    color:#fff;
                 }
             }
         }
+
     }
     p {
         line-height: 1.65em;
+        color:#fff;
     }
     .update,
     .counter {
@@ -70,7 +101,7 @@ footer {
         margin-right: 5px;
         em {
             font-style: normal;
-            color: $primaryColor;
+            color: #fff;
             padding: 0 .5em;
         }
     }

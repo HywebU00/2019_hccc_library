@@ -1,12 +1,58 @@
 /////////////////////////////////////////////////////////以下為demo範例///
 // 首頁區塊設定
 // 範例：
-.demosection {
-    [class^="col"] {
-        border: 2px solid #FFF;
-        background: #DEDEDE;
+section {
+    [class*="bg"] {
+        //border: 2px solid #FFF;
+        //background: #DEDEDE;
+        padding: 1em 0;
     }
 }
+.bg{
+    background: #f7f7f7;
+    //padding: 1.5em 0 2em 0;
+}
+.bg-1{
+    background: $lightColor url(../images/book_bg_1.png) no-repeat left 30px bottom 20px;
+    @include screen('notebook'){
+        background-position: left -20px bottom 10px;
+    }
+    @include screen('mobile'){
+        background-image: none;
+    }
+}
+.bg-2{
+    background:url(../images/book_bg_2.png) no-repeat right 30px top 30px;
+    @include screen('notebook'){
+        background-position: right -20px top 10px;
+    }
+    @include screen('mobile'){
+        background-image: none;
+    }
+}
+.mp{
+    background-position: center bottom 400px;
+    >section{
+        padding: 1em 0 2em 0;
+        @include screen('mobile'){
+            padding: 0 0 1em 0;
+            .col{
+                padding-top: 1em;
+            }
+        }
+        &.ad{
+            padding: 3em 0 3.5em 0;
+            background: #fff;
+            @include screen('mobile'){
+                padding:1em;
+            }
+        }
+    }
+    .main_image{
+        padding:0;
+    }
+}
+
 // 首頁輪播
 .mpSlider {
     width: 100%;
@@ -60,3 +106,617 @@
         }
     }
 }
+.reader_area{
+    background: $importantColor;
+    color:#fff;
+    padding: .8em 1.6em;
+    overflow: hidden;
+    //margin:1.5em 0;
+    font-size: .938em;
+    .reader{
+        display: inline-block;
+        vertical-align: middle;
+        margin:.7em 0;
+        position: relative;
+        @include screen('mobile') {
+            margin: .5em 0;
+        }
+        &:after{
+            content: "";
+            display: inline-block;
+            width: 8px;
+            height: 10px;
+            background: url(../images/arrow.png) no-repeat;
+            background-size: contain;
+            margin-left: 1em;
+            @include screen('mobile') {
+                transform: rotate(90deg);
+            }
+        }
+        .reader_name{
+            font-weight: bold;
+            font-size: 1.125em;
+        }
+    }
+    ul{
+        padding: 0;
+        margin:0;
+        display: inline-block;
+        vertical-align: middle;
+        @include screen('mobile') {
+            margin: .5em 0;
+        }
+        li{
+            position: relative;
+            float: left;
+            margin:.7em 10px;
+            padding-left: 25px;
+            list-style: none;
+            &:before{
+                content: "";
+                position: absolute;
+                width: 20px;
+                height: 22px;
+                left:0;
+                filter:invert(100%);
+                opacity:.85;
+            }
+            &.reader_borrow{
+                &:before{
+                    background: url(../images/icon/icon_book.svg) no-repeat 0 2px;
+                    background-size: contain;
+                }
+            }
+            &.reader_overdue{
+                &:before{
+                    background: url(../images/icon/icon_notice.svg) no-repeat 0 2px;
+                    background-size: contain;
+                }
+                span{
+                    background: $secondaryColor;
+                }
+            }
+            &.reader_violation{
+                &:before{
+                    background: url(../images/icon/icon_violation.svg) no-repeat 0 2px;
+                    background-size: contain;
+                }
+                span{
+                    background: $secondaryColor;
+                }
+            }
+            &.reader_booked{
+                &:before{
+                    background: url(../images/icon/icon_booked.svg) no-repeat 0 2px;
+                    background-size: contain;
+                }
+            }
+            &.reader_arrival{
+                &:before{
+                    background: url(../images/icon/icon_precautions.svg) no-repeat 0 2px;
+                    background-size: contain;
+                }
+                span{
+                    background: $secondaryColor;
+                }
+            }
+            span{
+                margin:0 .312em;
+                min-width: 18px;
+                height: 18px;
+                border-radius: .31em;
+                display: inline-block;
+                text-align: center;
+                font-family: Georgia;
+                font-weight: bold;
+                line-height: 1;
+            }
+        }
+    }
+    .btn_grp{
+        float: right;
+        padding:0;
+        @include screen('mobile') {
+            float: none;
+        }
+        button{
+            position: relative;
+            height: 36px;
+            box-sizing: border-box;
+            color: #fff;
+            margin-left: .5em;
+            text-shadow: none;
+            padding: 0 1em;
+            transition: all .3s;
+        }
+        .my_study{
+            padding-left: 2.65em;
+            &:after{
+                content: "";
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                left: 1em;
+               background: url(../images/icon/icon_card.svg) no-repeat;
+                background-size: contain;
+                filter: invert(1);
+            }
+
+        }
+        .logout{
+            background: $secondaryColor;
+        }
+    }
+}
+
+.news, .recent_activities{
+    position: relative;
+}
+
+.select_library{
+    position: absolute;
+    right: 15px;
+    top: 1.5em;
+    @include screen('mobile') {
+        position: static;
+    }
+}
+//最新消息
+.news{
+    .tabContent{
+        font-size: .938em;
+        .township_tag{
+            display: inline-block;
+            background: $primaryColor;
+            color:#fff;
+            padding: 0.7em;
+            line-height: .5em;
+        }
+        time{
+            font-size: .875em;
+        }
+    }
+    .tabSet{
+        margin-bottom: 0;
+    }
+}
+
+//讀者服務
+.reader_service{
+    &:before{
+        content: "";
+        display: block;
+        width: 2px;
+        height: 100%;
+        background: #ccc;
+    }
+    ul{
+        list-style: none;
+    }
+    li{
+        margin: 1.8em .5em;
+        a{
+            position: relative;
+            padding-left: 55px;
+            display: inline-block;
+            color: $color-word;
+            &:before{
+                content: "";
+                position: absolute;
+                left: 0;
+                top:-0.5em;
+                display: inline-block;
+                width: 42px;
+                height: 42px;
+                border-radius: 50%;
+            }
+        }
+    }
+    .service_search{
+        a{
+            &:before{
+                background: $primaryColor url(../images/icon_search.png) no-repeat center;
+                background-size: 50%;
+            }
+        }
+    }
+    .service_resources{
+        a{
+            &:before{
+                background: $primaryColor url(../images/icon_resources.png) no-repeat center;
+                background-size: 50%;
+            }
+        }
+    }
+    .service_app{
+        a{
+            &:before{
+                background: $primaryColor url(../images/icon_app.png) no-repeat center;
+                background-size: 50%;
+            }
+        }
+    }
+    .service_qa{
+        a{
+            &:before{
+                background: $primaryColor url(../images/icon_qa.png) no-repeat center;
+                background-size: 50%;
+            }
+        }
+    }
+    .service_writer{
+        a{
+            &:before{
+                background: $primaryColor url(../images/icon_writer.png) no-repeat center;
+                background-size: 50%;
+            }
+        }
+    }
+    .service_facebook{
+        a{
+            &:before{
+                background:url(../images/basic/icon_facebook.png) no-repeat center;
+                background-size: cover;
+            }
+        }
+    }
+    .service_line{
+        a{
+            &:before{
+                background:url(../images/basic/icon_line_round.png) no-repeat center;
+                background-size: cover;
+            }
+        }
+    }
+}
+//近期活動
+.recent_activities{
+
+}
+.activities_content{
+    ul{
+        list-style: none;
+        padding: 0;
+    }
+    li{
+        overflow: hidden;
+        padding: .5em 0;
+        border-bottom: 1px solid #fff;
+    }
+    .activity_date{
+        float: left;
+        font-weight: bold;
+        font-family: Georgia;
+        color: #fff;
+        background: $secondaryColor;
+        padding:.5em 1em;
+        position: relative;
+        height: 80px;
+        width: 115px;
+        &:after{
+            content: "";
+            position: absolute;
+            top:0;
+            right: -20px;
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 40px 0 40px 20px;
+            border-color: transparent transparent transparent #da4e7d;
+            @include screen('mobile') {
+                display: none;
+            }
+        }
+        .year{
+            display: block;
+            font-size: 1.25em;
+        }
+        .day{
+            display: inline-block;
+            font-size:1.875em;
+            margin-top: .25em;
+        }
+    }
+    .activity_info{
+        margin-left: 150px;
+        @include screen('mobile') {
+            margin-left: 125px;
+        }
+        a, time{
+            display: block;
+        }
+        .activity_title{
+            color: $color-word;
+            font-weight: bold;
+            font-size: 1.125em;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            transition: all .2s;
+            &:hover{
+                color: darken($primaryColor, 10);
+            }
+        }
+        time{
+            color: lighten($color-word, 10);
+            padding:.4em 0;
+            font-size: .938em;
+            &:before{
+                content: "";
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                background: url(../images/icon_activity_time.png) no-repeat center;
+                background-size: contain;
+                filter: invert(.5);
+                margin:-1px 5px 0 0;
+                vertical-align: middle;
+            }
+        }
+        .activity_location{
+            color: $importantColor;
+            font-size: .938em;
+            &:before{
+                content: "";
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                background: url(../images/icon_activity_location.png) no-repeat center;
+                background-size: contain;
+                filter: invert(.5);
+                margin:-1px 5px 0 0;
+                vertical-align: middle;
+            }
+            &:hover{
+                color: darken($importantColor, 10);
+            }
+        }
+    }
+
+}
+.fb_plugin{
+    width: 100%;
+    height: 350px;
+    margin:0 auto;
+    @include screen('mobile') {
+      width: 340px;
+    }
+    iframe{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+//新書展示
+.book_display{
+    h2{
+        text-align: left;
+        &:after{
+            margin-left: 0;
+        }
+    }
+    .tabContent{
+        padding:30px 10px;
+        // height: 280px;
+        // overflow: hidden;
+    }
+    .book_name{
+        color: $color-word;
+        font-size: .938em;
+        margin: 1em auto;
+        text-align: center;
+        max-width: 175px;
+        @include screen('xs_mobile') {
+            max-width: 130px;
+        }
+    }
+}
+
+.calendar_wrap{
+    .closed, .activity_day{
+        display: inline-block;
+        font-size: .938em;
+        padding: 1em;
+        &:before{
+            content: "";
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+    }
+    .closed{
+        &:before{
+            background: $color-gray;
+        }
+    }
+    .activity_day{
+        &:before{
+            background: $secondaryColor;
+        }
+    }
+}
+
+.pignose-calendar{
+    width: 100%;
+    border:none;
+    box-shadow: 0 0px 10px rgba(0,0,0,.1);
+    .pignose-calendar-top{
+        padding:1.5em 0;
+        box-shadow: none;
+        .pignose-calendar-top-date{
+            padding:.8em 0;
+        }
+    }
+    .pignose-calendar-header{
+        margin-top: 1em;
+        padding:0 1em;
+    }
+    .pignose-calendar-body{
+        padding: 1em;
+    }
+    .pignose-calendar-unit{
+        height: 3em;
+        line-height: 1.5em;
+        position: relative;
+        z-index: 50;
+        a{
+            position: relative;
+            z-index: 40;
+        }
+        &.pignose-calendar-unit-sat, &.pignose-calendar-unit-sun{
+            a{
+                color:#555;
+            }
+        }
+        .pignose-calendar-button-schedule-container {
+            .pignose-calendar-button-schedule-pin{
+                width: 2.4em;
+                height: 2.4em;
+                position: absolute;
+                left: 5%;
+                top:0;
+                border:1px solid $secondaryColor;
+            }
+        }
+    }
+}
+
+//各館資訊
+.library_select{
+    .pc_select{
+        text-align: left;
+         @include screen('mobile') {
+            display: none;
+        }
+    }
+    .mobile_select{
+        display: none;
+        @include screen('mobile') {
+            display: block;
+            padding:0 15px;
+        }
+    }
+    button, input[type="button"]{
+        background: $buttonColor;
+        text-shadow: none;
+        color: $color-word;
+        width: 13.5%;
+        min-width: 7em;
+        @include screen('tablet') {
+            width: 16.5%;
+        }
+        &:hover, &.active{
+            background: $primaryColor;
+            color:#fff;
+        }
+    }
+}
+.library_info{
+    .info_content{
+        padding: 2em 0;
+        overflow: hidden;
+        .library_name{
+            font-size:1.125em;
+            color:darken($primaryColor, 10);
+            margin-top:0;
+        }
+        ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+            @include make-xs-column(12);  //576px  width:100%
+            @include make-sm-column(12);  //768px  width:100%
+            @include make-md-column(6);  //992px  width:100%
+            @include make-lg-column(6);  //1400px width:100%
+        }
+        li{
+            padding:.6em 1em .6em 2em;
+            line-height: 1.6;
+            position: relative;
+            span{
+                display: block;
+                font-weight: bold;
+                @include screen('tablet') {
+                    display: inline-block;
+                    &:after{
+                        content: "-";
+                        display: inline-block;
+                        padding: 0 2px;
+                    }
+                }
+            }
+            &:before{
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 10px;
+                width: 25px;
+                height: 25px;
+                background: url(../images/icons_library_info.png) no-repeat;
+                background-size: 100%;
+            }
+        }
+        .info_address{
+            &:before{
+                content: "";
+                background-position: center top 0;
+            }
+        }
+        .info_email{
+            &:before{
+                content: "";
+                background-position: 0 -25px;
+            }
+        }
+        .info_phone{
+            &:before{
+                content: "";
+                background-position: 0 -50px;
+            }
+        }
+        .info_opening{
+            &:before{
+                content: "";
+                background-position: 0 -75px;
+            }
+        }
+        .info_closed{
+            &:before{
+                content: "";
+                background-position: 0 -100px;
+            }
+        }
+        .info_collection{
+            &:before{
+                content: "";
+                background-position: 0 -125px;
+            }
+        }
+        .info_space{
+            &:before{
+                content: "";
+                background-position: 0 -150px;
+            }
+        }
+    }
+}
+.full.map{
+    width: 100%;
+    height: 360px;
+    @include screen('mobile'){
+        height: 200px
+    }
+    iframe{
+        width: 100%;
+        height: 360px;
+        @include screen('mobile'){
+        height: 200px
+        }
+    }
+}
+
+

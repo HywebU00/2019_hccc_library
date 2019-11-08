@@ -214,22 +214,24 @@ $(function() {
         search_mode = false;
     });
     // 固定版頭
-    var stickyMenuTop = Math.floor($('.header .menu').offset().top);
-    console.log(stickyMenuTop);
-    hh = Math.floor($('.header').outerHeight(true));
-    menuH = Math.floor(_menu.outerHeight(true));
-    $(window).bind("load scroll resize", function(e) {
-        ww = _window.outerWidth();
-        if (ww >= wwSmall && $(this).scrollTop() > stickyMenuTop) {
-            $('.header').addClass('fixed');
-            $('.header').css('margin-top', menuH - hh);
-            $('.main').css('margin-top', hh);
-        } else {
-            $('.header').removeClass('fixed');
-            $('.header').css('margin-top', 0);
-            $('.main').css('margin-top', 0);
-        }
-    });
+    if ($('header .menu').length > 0){
+        var stickyMenuTop = Math.floor($('.header .menu').offset().top);
+        console.log(stickyMenuTop);
+        hh = Math.floor($('.header').outerHeight(true));
+        menuH = Math.floor(_menu.outerHeight(true));
+        $(window).bind("load scroll resize", function(e) {
+            ww = _window.outerWidth();
+            if (ww >= wwSmall && $(this).scrollTop() > stickyMenuTop) {
+                $('.header').addClass('fixed');
+                $('.header').css('margin-top', menuH - hh - 10);
+                $('.main').css('margin-top', hh);
+            } else {
+                $('.header').removeClass('fixed');
+                $('.header').css('margin-top', 0);
+                $('.main').css('margin-top', 0);
+            }
+        });
+    }
     /*-----------------------------------*/
     //////////// notice訊息區塊 ////////////
     /*-----------------------------------*/
@@ -261,10 +263,10 @@ $(function() {
     $('.btn-fatfooter').click(function(e) {
         $(this).parent('.container').find('nav>ul>li>ul').stop(true, true).slideToggle(function() {
             if ($(this).is(':visible')) {
-                $('.btn-fatfooter').html("收合/CLOSE");
+                $('.btn-fatfooter').html("CLOSE");
                 $('.btn-fatfooter').attr('name', '收合選單/CLOSE');
             } else {
-                $('.btn-fatfooter').html("展開/OPEN");
+                $('.btn-fatfooter').html("OPEN");
                 $('.btn-fatfooter').attr('name', '展開選單/OPEN');
             }
         });
@@ -378,6 +380,7 @@ $(function() {
     });
 
     function tabSet() {
+
         $('.tabs').each(function() {
             var _tab = $(this),
                 _tabItem = _tab.find('.tabItem'),
@@ -409,9 +412,10 @@ $(function() {
                 var _tabItemNow = $(this).parent(),
                     tvp = _tab.offset().top,
                     tabIndex = _tabItemNow.index() / 2,
-                    scollDistance = tvp + tabItemHeight * tabIndex - hh;
+                    scollDistance = tvp + tabItemHeight * tabIndex - 70;
                 _tabItem.removeClass('active');
                 _tabItemNow.addClass('active');
+                //_tabItemNow.load(window.location.href + ".bookSlider" );
                 if (ww <= wwSmall) {
                     _tabItem.not('.active').next().slideUp();
                     _tabItemNow.next().slideDown();

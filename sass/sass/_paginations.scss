@@ -1,5 +1,5 @@
 .pagination {
-    margin: .5em auto;
+    margin: 1em auto;
     padding: 0;
     display: block;
     text-align: center;
@@ -20,14 +20,15 @@
             list-style: none;
             @include box-sizing();
             a {
-                border-radius: 5px;
-                padding: 6px 10px;
+                padding: 7px 10px;
                 font-weight: 700;
                 display: block;
                 white-space: nowrap;
                 font-size: 1em;
                 color: $color-word;
-                @include gradient (#F7F7F7, #EAEAEA, vertical);
+                border-radius: 50%;
+                //@include gradient (#F7F7F7, #EAEAEA, vertical);
+                background:#eee;
                 border: #ccc solid 1px;
                 &:hover,
                 &:focus {

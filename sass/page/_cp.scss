@@ -2,7 +2,12 @@
 // 文章標題
 h1.title, h2.title {
     line-height: 1.25em;
-    margin: .4em 0;
+    margin: 1em 0;
+    font-size: 1.875em;
+}
+h3.title{
+    font-size:1.5em;
+    margin: 1em 0;
 }
 .cp {
     .pic {
@@ -69,6 +74,19 @@ h1.title, h2.title {
     }
     a {
         @include aSetting;
+    }
+    ol, ul{
+        &.no-style{
+            @include li-reset;
+        }
+    }
+}
+.share{
+    float: right;
+    margin:1em 0;
+    @include screen('mobile'){
+        float: none;
+        margin:.5em 0;
     }
 }
 // 文章標籤
