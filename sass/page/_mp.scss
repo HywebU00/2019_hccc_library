@@ -498,8 +498,9 @@ section {
     }
     .tabContent{
         padding:30px 10px;
-        // height: 280px;
-        // overflow: hidden;
+        height: 364px;
+        width: 100%;
+        overflow: hidden;
     }
     .book_name{
         color: $color-word;

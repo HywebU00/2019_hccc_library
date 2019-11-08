@@ -415,14 +415,17 @@ $(function() {
                     scollDistance = tvp + tabItemHeight * tabIndex - 70;
                 _tabItem.removeClass('active');
                 _tabItemNow.addClass('active');
-                //_tabItemNow.load(window.location.href + ".bookSlider" );
                 if (ww <= wwSmall) {
                     _tabItem.not('.active').next().slideUp();
-                    _tabItemNow.next().slideDown();
+                    _tabItemNow.next().slideDown("0", function() {
+                        $('.bookSlider').slick("setPosition", 0);
+                    });
                     $("html,body").stop(true, false).animate({ scrollTop: scollDistance });
                 } else {
-                    _tabItem.not('.active').next().hide();
-                    _tabItemNow.next().show();
+                    _tabItem.not('.active').next().fadeOut();
+                    _tabItemNow.next().fadeIn("0", function() {
+                        $('.bookSlider').slick("setPosition", 0);
+                    });
                     tabContentHeight = _tabItemNow.next().innerHeight();
                     _tab.height(tabContentHeight + tabItemHeight);
                 }

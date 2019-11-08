@@ -96,7 +96,7 @@ $(function() {
                 slidesToScroll: 1,
                 arrows: true
             }
-        }]
+        }],
     });
     //燈箱slick+lightBox組合
     $('.cp_slider').slick({
@@ -171,4 +171,8 @@ $(function() {
         focusOnSelect: true,
         infinite: true
     });
+$('.tabItem').click(function(){
+        $('.bookSlider')[0].slick.refresh();
+    });
 });
+
