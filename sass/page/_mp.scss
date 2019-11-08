@@ -228,6 +228,9 @@ section {
             text-shadow: none;
             padding: 0 1em;
             transition: all .3s;
+            &:hover{
+                box-shadow: none;
+            }
         }
         .my_study{
             padding-left: 2.65em;
@@ -241,10 +244,16 @@ section {
                 background-size: contain;
                 filter: invert(1);
             }
+            &:hover{
+                background-color: darken($primaryColor, 10);
+            }
 
         }
         .logout{
             background: $secondaryColor;
+            &:hover{
+                background-color: darken($secondaryColor, 10);
+            }
         }
     }
 }
@@ -616,6 +625,7 @@ section {
     }
 }
 .library_info{
+    padding-top: 0;
     .info_content{
         padding: 2em 0;
         overflow: hidden;

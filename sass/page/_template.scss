@@ -98,17 +98,31 @@ body {
     font-size: .938em;
     text-align: right;
     margin-top:20px;
+    transition: all .3s;
+    position: relative;
+    transition: all .3s;
+    padding-right: 22px;
+    &:hover{
+        &:after{
+            right: -2px;
+        }
+    }
     a{
         color: $secondaryColor;
     }
     &:after{
         content: "";
+        position: absolute;
+        right: 0;
+        top:50%;
+        margin-top: -6px;
         display: inline-block;
         width: 20px;
         height: 12px;
         background: url(../images/more_arrow.png) no-repeat;
         background-size: contain;
         margin-left: .15em;
+        transition: all .3s;
     }
 }
 
