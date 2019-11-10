@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
 }
+
 body {
     &.noscroll {
         position: static !important;
@@ -12,117 +13,149 @@ body {
         padding: 0;
     }
 }
+
 // 最外圍預設為100%
 .wrapper {
     width: 100%;
     margin: 0px auto;
+
     @include screen('mobile') {
         background: #FFF;
         overflow: hidden;
         overflow-y: auto;
     }
 }
+
 // 整體共用container樣式，請注意首頁切版頁面的整齊
 .container {
     padding: 0;
     margin: 0 auto;
     max-width: $container-max; //請看_variable.scss
 }
+
 .main {
     position: relative;
     margin: 0 auto;
     padding: 0 0 2em 0;
-    background:#fff url(../images/bg_bottom.png) no-repeat center bottom;
+    background: #fff url(../images/bg_bottom.png) no-repeat center bottom;
     background-size: contain;
+
     // 可先設定一個中央區塊最大寬，限制accesskey對齊
     @include screen('mobile') {
         padding-top: 55px;
         background-image: none;
     }
+
     h2 {
         line-height: 1.25em;
         text-align: center;
         margin-bottom: 1em;
-        &:after{
+
+        &:after {
             content: "";
             height: 2px;
             width: 2em;
             background: $secondaryColor;
             display: block;
-            margin:.4em auto;
+            margin: .4em auto;
         }
     }
-    .col{
+
+    .col {
         @include gutter;
     }
 }
+
 ////////////////////////////////////////////////////////////
 // 為了與首頁區隔，請在內頁加上innerpage ClassName
 .innerpage {
     //padding-top: 2em;
     background: #fff url(../images/bg_bottom_innerpage.png) no-repeat right bottom;
-    background-size:contain;
+    background-size: contain;
+
     @include screen('mobile') {
         padding-top: 60px;
     }
+
     >.container {
         @include gutter(); //gutter 代表左右要留白
     }
-    .main_image{
-        .img-container{
+
+    .main_image {
+        .img-container {
             height: 280px;
+
             @include screen('tablet') {
                 height: 220px;
             }
-            @include screen('mobile'){
+
+            @include screen('mobile') {
                 height: 160px;
             }
-            @include screen('xs_mobile'){
+
+            @include screen('xs_mobile') {
                 height: 120px;
             }
         }
     }
-    .function_nav{
+
+    .function_nav {
         position: relative;
-        .function{
+
+        .function {
             position: absolute;
             right: 0;
-            top:-3px;
-            @include screen('mobile'){
+            top: -3px;
+
+            @include screen('mobile') {
                 position: static;
             }
         }
     }
 }
-.more{
+
+.more {
+    //position: relative;
     font-size: .938em;
     text-align: right;
-    margin-top:20px;
-    transition: all .3s;
-    position: relative;
-    transition: all .3s;
-    padding-right: 22px;
-    &:hover{
-        &:after{
-            right: -2px;
+    margin-top: 20px;
+
+    &:hover {
+        &:after {
+            animation: more_gogo .8s infinite;
         }
     }
-    a{
+
+    a {
         color: $secondaryColor;
     }
-    &:after{
+
+    &:after {
         content: "";
-        position: absolute;
-        right: 0;
-        top:50%;
-        margin-top: -6px;
+        // position: absolute;
+        // right: 0;
+        // top:50%;
+        // margin-top: -6px;
         display: inline-block;
         width: 20px;
         height: 12px;
         background: url(../images/more_arrow.png) no-repeat;
         background-size: contain;
         margin-left: .15em;
-        transition: all .3s;
+
     }
 }
 
+@keyframes more_gogo {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(3px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}

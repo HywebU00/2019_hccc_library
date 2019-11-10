@@ -19,6 +19,7 @@ img {
     @include aspect-ratio(4,3);
     background:#fbfbfb;
     transition: all .3s;
+    z-index: 50;
     &:hover{
         background: #fff;
     }

@@ -318,6 +318,17 @@ section {
                 width: 42px;
                 height: 42px;
                 border-radius: 50%;
+                transition: all .3s;
+                transform: rotate(0);
+                }
+            &:hover{
+                &:before{
+                    -moz-transform:scale(1.1,1.1);
+                    -webkit-transform:scale(1.1,1.1);
+                    transform:scale(1.1,1.1);
+                    box-shadow: 0 1px 3px rgba(0,0,0,.4);
+                    background-color: $secondaryColor;
+                }
             }
         }
     }
@@ -629,6 +640,9 @@ section {
     .info_content{
         padding: 2em 0;
         overflow: hidden;
+        @include screen('mobile'){
+            padding:0;
+        }
         .library_name{
             font-size:1.125em;
             color:darken($primaryColor, 10);
