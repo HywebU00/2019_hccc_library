@@ -107,12 +107,16 @@ section {
     }
 }
 .reader_area{
+    min-height: 68px;
     background: $importantColor;
     color:#fff;
     padding: .8em 1.6em;
     overflow: hidden;
-    //margin:1.5em 0;
+    margin:.5em 0;
     font-size: .938em;
+    @include screen('mobile') {
+            padding: 1.2em 1.6em;
+    }
     .reader{
         display: inline-block;
         vertical-align: middle;
@@ -213,46 +217,53 @@ section {
             }
         }
     }
-    .btn_grp{
-        float: right;
-        padding:0;
-        @include screen('mobile') {
-            float: none;
+    .form_inline{
+        input,label{
+            margin:0 5px 0 0;
         }
-        button{
-            position: relative;
-            height: 36px;
-            box-sizing: border-box;
-            color: #fff;
-            margin-left: .5em;
-            text-shadow: none;
-            padding: 0 1em;
-            transition: all .3s;
-            &:hover{
-                box-shadow: none;
+        .form_grp{
+            margin-top: 3px;
+        }
+        .form_grp, .check_grp{
+            @include screen('mobile') {
+                padding-bottom:.5em;
             }
         }
-        .my_study{
-            padding-left: 2.65em;
-            &:after{
-                content: "";
-                width: 20px;
-                height: 20px;
-                position: absolute;
-                left: 1em;
-               background: url(../images/icon/icon_card.svg) no-repeat;
-                background-size: contain;
-                filter: invert(1);
+        .btn_grp{
+            float: right;
+            padding:0;
+            margin: .5em 0 0 0;
+            @include screen('mobile') {
+                float: none;
+                display: block;
             }
-            &:hover{
-                background-color: darken($primaryColor, 10);
+            button{
+                position: relative;
+                height: 36px;
+                box-sizing: border-box;
+                color: #fff;
+                margin-left: .5em;
+                text-shadow: none;
+                padding: 0 1em;
+                transition: all .3s;
+                &:hover{
+                    box-shadow: none;
+                }
             }
+            .my_study{
+                padding-left: 2.65em;
+                background:$primaryColor url(../images/icon_card.png) no-repeat left 1em center;
+                background-size: 20px;
+                &:hover{
+                    background-color: darken($primaryColor, 10);
+                }
 
-        }
-        .logout{
-            background: $secondaryColor;
-            &:hover{
-                background-color: darken($secondaryColor, 10);
+            }
+            .logout{
+                background: $secondaryColor;
+                &:hover{
+                    background-color: darken($secondaryColor, 10);
+                }
             }
         }
     }

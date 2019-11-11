@@ -150,19 +150,41 @@
             </section>
             <section class="col-12">
                 <div class="container">
+                    <!--讀者登入-->
                     <div class="reader_area">
-                        <p class="reader">歡迎，<span class="reader_name">李若珮</span></p>
-                        <ul>
-                            <li class="reader_borrow">借閱中<span>10</span></li>
-                            <li class="reader_overdue">逾期未歸<span>1</span></li>
-                            <li class="reader_violation">違規天數<span>1</span></li>
-                            <li class="reader_booked">預約<span>5</span></li>
-                            <li class="reader_arrival">已到館<span>2</span></li>
-                        </ul>
-                        <div class="btn_grp">
-                            <button class="my_study"></i>個人書房</button>
-                            <button class="logout">登出</button>
-                        </div>
+                        <form action="" class="form_inline">
+                            <p class="reader">歡迎，<span class="reader_name">李若珮</span></p>
+                            <ul>
+                                <li class="reader_borrow">借閱中<span>10</span></li>
+                                <li class="reader_overdue">逾期未歸<span>1</span></li>
+                                <li class="reader_violation">違規天數<span>1</span></li>
+                                <li class="reader_booked">預約<span>5</span></li>
+                                <li class="reader_arrival">已到館<span>2</span></li>
+                            </ul>
+                            <div class="btn_grp">
+                                <input type="button" class="my_study" value="個人書房">
+                                <input type="button" class="logout" value="登出">
+                            </div>
+                        </form>
+                    </div>
+                    <!--未登入-->
+                    <div class="reader_area" style="display: none;">
+                        <form action="" class="form_inline">
+                            <div class="form_grp">
+                                <label for="username">帳號：</label>
+                                <input name="username" type="text" placeholder="請輸入帳號">
+                            </div>
+                            <div class="form_grp">
+                                <label for="password">密碼：</label>
+                                <input name="password" type="password" placeholder="請輸入密碼">
+                            </div>
+                            <div class="check_grp">
+                                <label><input type="checkbox">記住帳號</label>
+                            </div>
+                            <div class="btn_grp">
+                                <input type="button" class="logout" value="登出">
+                            </div>
+                        </form>
                     </div>
                 </div>
             </section>
@@ -936,7 +958,7 @@
                         </div>
                         <div class="img-container">
                             <a href="#" title="">
-                               <picture>
+                                <picture>
                                     <source media="(min-width: 1200px)" srcset="https://via.placeholder.com/165x55">
                                     <source media="(min-width: 992px)" srcset="https://via.placeholder.com/165x55">
                                     <source media="(min-width: 576px)" srcset="https://via.placeholder.com/165x55">
@@ -1088,10 +1110,10 @@
     <script src="js/hyui.js"></script>
     <!-- 客製js -->
     <script src="js/customize.js"></script>
-     <!-- WOW -->
+    <!-- WOW -->
     <script src="vendor/wow/wow.min.js"></script>
     <script>
-        new WOW().init();
+    new WOW().init();
     </script>
     <script>
     $(function() {
