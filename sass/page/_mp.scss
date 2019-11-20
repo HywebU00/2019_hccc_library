@@ -743,6 +743,7 @@ section {
 .full.map{
     width: 100%;
     height: 360px;
+    background-color: #fff;
     @include screen('mobile'){
         height: 200px
     }

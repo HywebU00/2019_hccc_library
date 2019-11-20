@@ -83,7 +83,7 @@ body {
 
     .main_image {
         .img-container {
-            height: 280px;
+            height: 250px;
 
             @include screen('tablet') {
                 height: 220px;

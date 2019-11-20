@@ -116,6 +116,9 @@
             time{
                 position: static;
             }
+            time{
+                padding-left: 0;
+            }
             .dept{
                 margin: 0;
             }
@@ -129,8 +132,17 @@
         }
         .list_title{
             a{
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+                max-height: 3.125em;
                 color: $color-word;
                 font-weight: bold;
+                @include screen("mobile"){
+                    display:block;
+                    max-height: 100%;
+                }
             }
         }
     }
