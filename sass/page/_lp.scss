@@ -24,6 +24,17 @@
             }
         }
     }
+    .questionnaire{
+        td{
+            text-align: center;
+        }
+        .btn{
+            color:#fff;
+        }
+        .name{
+            text-align: left;
+        }
+    }
 
     .list {
         &>ul,
@@ -239,6 +250,9 @@
                 max-width: 90%;
                 margin: 0 auto 1em;
             }
+            &:nth-child(3n+1){
+                clear:both;
+            }
         }
     }
 }
@@ -383,4 +397,15 @@
             }
         }
     }
+}
+.lost_list{
+    table{
+        th{
+            text-align:left;
+        }
+    }
+}
+.chat_grp{
+    margin-bottom: 1em;
+    border-bottom: 1px solid #DDD;
 }

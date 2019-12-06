@@ -10,10 +10,11 @@ section {
 }
 .bg{
     background: #f7f7f7;
-    //padding: 1.5em 0 2em 0;
+    padding-bottom: 1.83em;
 }
 .bg-1{
     background: $lightColor url(../images/book_bg_1.png) no-repeat left 30px bottom 20px;
+    padding-bottom: 1.83em;
     @include screen('notebook'){
         background-position: left -20px bottom 10px;
     }
@@ -33,7 +34,7 @@ section {
 .mp{
     background-position: center bottom 400px;
     >section{
-        padding: 1em 0 2em 0;
+        //padding: 1em 0 2em 0;
         @include screen('mobile'){
             padding: 0 0 1em 0;
             .col{
@@ -41,10 +42,13 @@ section {
             }
         }
         &.ad{
-            padding: 3em 0 3.5em 0;
+            padding: 2em 0;
             background: #fff;
             @include screen('mobile'){
                 padding:1em;
+            }
+            .adSlider{
+                margin-bottom: 0;
             }
         }
     }
@@ -527,8 +531,11 @@ section {
             margin-left: 0;
         }
     }
+    .tabSet{
+        margin:0 auto;
+    }
     .tabContent{
-        padding:30px 10px;
+        padding:30px 10px 0 10px;
         height: 364px;
         width: 100%;
         overflow: hidden;
@@ -635,8 +642,7 @@ section {
         background: $buttonColor;
         text-shadow: none;
         color: $color-word;
-        width: 13.5%;
-        min-width: 7em;
+        min-width: 13.5%;
         @include screen('tablet') {
             width: 16.5%;
         }
@@ -649,7 +655,7 @@ section {
 .library_info{
     padding-top: 0;
     .info_content{
-        padding: 2em 0;
+        padding: 1em 0;
         overflow: hidden;
         @include screen('mobile'){
             padding:0;
@@ -698,43 +704,36 @@ section {
         }
         .info_address{
             &:before{
-                content: "";
                 background-position: center top 0;
             }
         }
         .info_email{
             &:before{
-                content: "";
                 background-position: 0 -25px;
             }
         }
         .info_phone{
             &:before{
-                content: "";
                 background-position: 0 -50px;
             }
         }
         .info_opening{
             &:before{
-                content: "";
                 background-position: 0 -75px;
             }
         }
         .info_closed{
             &:before{
-                content: "";
                 background-position: 0 -100px;
             }
         }
         .info_collection{
             &:before{
-                content: "";
                 background-position: 0 -125px;
             }
         }
         .info_space{
             &:before{
-                content: "";
                 background-position: 0 -150px;
             }
         }

@@ -13,8 +13,13 @@ table {
     td {
         border: #ddd 1px solid;
         word-break: break-all;
+        border-left:0;
+        border-right: 0;
         a {
             word-break: break-all;
+        }
+        &.num, &.date{
+            text-align: center;
         }
     }
     th {
@@ -23,6 +28,8 @@ table {
         border: #DDD 1px solid;
         text-align: center;
         white-space: nowrap;
+        border-left:0;
+        border-right: 0;
     }
     &.table_hover {
         tr:hover {
@@ -74,6 +81,9 @@ table {
                 font-weight: bold;
                 color: #000;
             }
+            &.num, &.date{
+                text-align: left;
+            }
         }
     }
 }
@@ -102,6 +112,8 @@ table {
         padding: .8em 0;
         text-align: center;
         line-height: 1.2;
+        border-left: 1px solid #DDD;
+        border-right: 1px solid #DDD;
         @include screen('mobile') {
             display: inline-block;
             margin-right: -6px;
@@ -152,6 +164,10 @@ table {
 }
 .scroltable{
     min-width:600px !important;
+    td, th{
+        border-right: 1px solid #DDD;
+        border-left:1px solid #DDD;
+    }
 }
 .scroltable-wrapper {
     position: relative;

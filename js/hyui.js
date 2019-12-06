@@ -93,7 +93,7 @@ $(function() {
             $(this).hide();
         });
     });
-    _menu.find('li').keyup(function() {
+    _menu.find('li a').keyup(function() {
         $(this).siblings().children('ul').hide();
     });
     _menu.find('li:last>a').focusout(function() {
