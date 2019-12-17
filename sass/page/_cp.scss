@@ -172,21 +172,21 @@ h3.title{
     .agree_grp{
         text-align: center;
     }
-    .back, .next{
-        min-width: 120px;
-        padding:.65em 1.5em;
-        margin-bottom: 1em;
-        border:0;
-    }
-    .back{
-        background:darken($color-gray, 10);
-        &:hover{
-            background:darken($color-gray, 20);
-        }
-    }
-    .next{
-        background:$primaryColor;
-    }
+    // .back, .next{
+    //     min-width: 120px;
+    //     padding:.65em 1.5em;
+    //     margin-bottom: 1em;
+    //     border:0;
+    // }
+    // .back{
+    //     background:darken($color-gray, 10);
+    //     &:hover{
+    //         background:darken($color-gray, 20);
+    //     }
+    // }
+    // .next{
+    //     background:$primaryColor;
+    // }
 }
 .share{
     text-align: right;
