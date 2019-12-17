@@ -37,6 +37,10 @@
                         <li><a href="#">網站導覽</a></li>
                         <li><a href="#">回首頁</a></li>
                         <li><a href="#">花蓮縣文化局</a></li>
+                        <!-- 未登入 -->
+                        <li class="login"><a href="#"><img src="images/icon_user.png" alt="讀者登入">讀者登入</a></li>
+                        <!-- 登入後 -->
+                        <!-- <li class="login"><a href="#"><img src="images/icon_user.png" alt="讀者登入"><span class="user_name">吳美慧</span></a></li> -->
                     </ul>
                 </nav>
                 <!-- navigation End -->
@@ -148,46 +152,7 @@
                     </div>
                 </div>
             </section>
-            <section class="col-12">
-                <div class="container">
-                    <!--讀者登入-->
-                    <div class="reader_area">
-                        <form action="" class="form_inline">
-                            <p class="reader">歡迎，<span class="reader_name">李若珮</span></p>
-                            <ul>
-                                <li class="reader_borrow">借閱中<span>10</span></li>
-                                <li class="reader_overdue">逾期未歸<span>1</span></li>
-                                <li class="reader_violation">違規天數<span>1</span></li>
-                                <li class="reader_booked">預約<span>5</span></li>
-                                <li class="reader_arrival">已到館<span>2</span></li>
-                            </ul>
-                            <div class="btn_grp">
-                                <input type="button" class="my_study" value="個人書房">
-                                <input type="button" class="logout" value="登出">
-                            </div>
-                        </form>
-                    </div>
-                    <!--未登入-->
-                    <div class="reader_area" style="display: none;">
-                        <form action="" class="form_inline">
-                            <div class="form_grp">
-                                <label for="username">帳號：</label>
-                                <input name="username" type="text" placeholder="請輸入帳號">
-                            </div>
-                            <div class="form_grp">
-                                <label for="password">密碼：</label>
-                                <input name="password" type="password" placeholder="請輸入密碼">
-                            </div>
-                            <div class="check_grp">
-                                <label><input type="checkbox">記住帳號</label>
-                            </div>
-                            <div class="btn_grp">
-                                <input type="button" class="logout" value="登入">
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </section>
+
             <!--  兩欄樣式 -->
             <section class="col-8-4">
                 <div class="container">
@@ -906,7 +871,9 @@
                         <div class="col wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".5s">
                             <h3 class="library_name">花蓮縣文化局圖書館</h3>
                             <ul>
-                                <li class="info_address">97060 花蓮市文復路6號</li>
+                                <li class="info_address">97060 花蓮市文復路6號
+                                    <a href="https://goo.gl/maps/KFyv5VgWfY441k5K7" class="map_link" target="_blank"><img src="images/Google_Maps_icon.png" alt=""></a>
+                                </li>
                                 <li class="info_email">service@hccc.gov.tw</li>
                                 <li class="info_phone"><span>服務台專線電話</span>03-8227121#506 或 #164</li>
                                 <li class="info_opening"><span>開館時間</span>星期二至星期日 09:00~21:00</li>
@@ -923,11 +890,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="full map">
+                <!-- <div class="full map">
                     <div class="container">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3645.1639464481095!2d121.62655021447917!3d23.989987085499344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3466207f83eb934f%3A0x7c6141bc201bad3!2zOTcw6Iqx6JOu57ij6Iqx6JOu5biC5paH5b6p6LevNuiZnw!5e0!3m2!1szh-TW!2stw!4v1572836204348!5m2!1szh-TW!2stw" width="" height="" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
                     </div>
-                </div>
+                </div> -->
             </section>
             <section class="ad">
                 <div class="container">

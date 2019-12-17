@@ -96,7 +96,7 @@ $(function() {
                 slidesToScroll: 1,
                 arrows: true
             }
-        }],
+        }]
     });
     //燈箱slick+lightBox組合
     $('.cp_slider').slick({
