@@ -152,25 +152,42 @@
                 line-height: 38px;
             }
         }
-        .login{
-            font-size: 0px;
-            img{
-                width:20px;
-                height:auto;
-                vertical-align:middle;
-                margin:0 5px;
-                transition: all .3s;
-            }
+        .login_btn{
+            border: 1px solid #fff;
+            line-height: 24px;
+            margin: 6px 0;
+            padding: 0 .5em 0 1.85em;
+            transition: all .3s;
+            border-radius: .31em;
+            background-color:rgba($primaryColor, 0);
+            background:url(../images/icon_user.png) no-repeat left .5em center;
+            background-size: 1em;
             &:hover{
-                img{
-                    transform:scale(1.1);
-                }
-            }
-            .user_name{
-                vertical-align:middle;
-                text-decoration:underline;
+                background-color:$primaryColor;
             }
         }
+        .reader_area{
+            .user_name{
+                display:inline-block;
+                color:#fff;
+                padding-left:25px;
+                background:url(../images/icon_user.png) no-repeat left top;
+                background-size:20px;
+                vertical-align:middle;
+            }
+            .my_study{
+                background: url(../images/icon_card.png) no-repeat left 5px center;
+                background-size: 18px;
+                padding: 0 5px 0 25px;
+                margin: 6px 10px;
+                line-height: 26px;
+                border: 1px solid #fff;
+                &:hover{
+                    background-color:$primaryColor;
+                }
+            }
+        }
+
         .language {
             position: absolute;
             right: 15px;

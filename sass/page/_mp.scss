@@ -111,168 +111,169 @@ section {
         }
     }
 }
-.reader_area{
-    min-height: 68px;
-    background: $importantColor;
-    color:#fff;
-    padding: .8em 1.6em;
-    overflow: hidden;
-    margin:.5em 0;
-    font-size: .938em;
-    @include screen('mobile') {
-            padding: 1.2em 1.6em;
-    }
-    .reader{
-        display: inline-block;
-        vertical-align: middle;
-        margin:.7em 0;
-        position: relative;
-        @include screen('mobile') {
-            margin: .5em 0;
-        }
-        &:after{
-            content: "";
-            display: inline-block;
-            width: 8px;
-            height: 10px;
-            background: url(../images/arrow.png) no-repeat;
-            background-size: contain;
-            margin-left: 1em;
-            @include screen('mobile') {
-                transform: rotate(90deg);
-            }
-        }
-        .reader_name{
-            font-weight: bold;
-            font-size: 1.125em;
-        }
-    }
-    ul{
-        padding: 0;
-        margin:0;
-        display: inline-block;
-        vertical-align: middle;
-        @include screen('mobile') {
-            margin: .5em 0;
-        }
-        li{
-            position: relative;
-            float: left;
-            margin:.7em 10px;
-            padding-left: 25px;
-            list-style: none;
-            &:before{
-                content: "";
-                position: absolute;
-                width: 20px;
-                height: 22px;
-                left:0;
-                filter:invert(100%);
-                opacity:.85;
-            }
-            &.reader_borrow{
-                &:before{
-                    background: url(../images/icon/icon_book.svg) no-repeat 0 2px;
-                    background-size: contain;
-                }
-            }
-            &.reader_overdue{
-                &:before{
-                    background: url(../images/icon/icon_notice.svg) no-repeat 0 2px;
-                    background-size: contain;
-                }
-                span{
-                    background: $secondaryColor;
-                }
-            }
-            &.reader_violation{
-                &:before{
-                    background: url(../images/icon/icon_violation.svg) no-repeat 0 2px;
-                    background-size: contain;
-                }
-                span{
-                    background: $secondaryColor;
-                }
-            }
-            &.reader_booked{
-                &:before{
-                    background: url(../images/icon/icon_booked.svg) no-repeat 0 2px;
-                    background-size: contain;
-                }
-            }
-            &.reader_arrival{
-                &:before{
-                    background: url(../images/icon/icon_precautions.svg) no-repeat 0 2px;
-                    background-size: contain;
-                }
-                span{
-                    background: $secondaryColor;
-                }
-            }
-            span{
-                margin:0 .312em;
-                min-width: 18px;
-                height: 18px;
-                border-radius: .31em;
-                display: inline-block;
-                text-align: center;
-                font-family: Georgia;
-                font-weight: bold;
-                line-height: 1;
-            }
-        }
-    }
-    .form_inline{
-        input,label{
-            margin:0 5px 0 0;
-        }
-        .form_grp{
-            margin-top: 3px;
-        }
-        .form_grp, .check_grp{
-            @include screen('mobile') {
-                padding-bottom:.5em;
-            }
-        }
-        .btn_grp{
-            float: right;
-            padding:0;
-            margin: .5em 0 0 0;
-            @include screen('mobile') {
-                float: none;
-                display: block;
-            }
-            button{
-                position: relative;
-                height: 36px;
-                box-sizing: border-box;
-                color: #fff;
-                margin-left: .5em;
-                text-shadow: none;
-                padding: 0 1em;
-                transition: all .3s;
-                &:hover{
-                    box-shadow: none;
-                }
-            }
-            .my_study{
-                padding-left: 2.65em;
-                background:$primaryColor url(../images/icon_card.png) no-repeat left 1em center;
-                background-size: 20px;
-                &:hover{
-                    background-color: darken($primaryColor, 10);
-                }
 
-            }
-            .logout{
-                background: $secondaryColor;
-                &:hover{
-                    background-color: darken($secondaryColor, 10);
-                }
-            }
-        }
-    }
-}
+// .reader_area{
+//     min-height: 68px;
+//     background: $importantColor;
+//     color:#fff;
+//     padding: .8em 1.6em;
+//     overflow: hidden;
+//     margin:.5em 0;
+//     font-size: .938em;
+//     @include screen('mobile') {
+//             padding: 1.2em 1.6em;
+//     }
+//     .reader{
+//         display: inline-block;
+//         vertical-align: middle;
+//         margin:.7em 0;
+//         position: relative;
+//         @include screen('mobile') {
+//             margin: .5em 0;
+//         }
+//         &:after{
+//             content: "";
+//             display: inline-block;
+//             width: 8px;
+//             height: 10px;
+//             background: url(../images/arrow.png) no-repeat;
+//             background-size: contain;
+//             margin-left: 1em;
+//             @include screen('mobile') {
+//                 transform: rotate(90deg);
+//             }
+//         }
+//         .reader_name{
+//             font-weight: bold;
+//             font-size: 1.125em;
+//         }
+//     }
+//     ul{
+//         padding: 0;
+//         margin:0;
+//         display: inline-block;
+//         vertical-align: middle;
+//         @include screen('mobile') {
+//             margin: .5em 0;
+//         }
+//         li{
+//             position: relative;
+//             float: left;
+//             margin:.7em 10px;
+//             padding-left: 25px;
+//             list-style: none;
+//             &:before{
+//                 content: "";
+//                 position: absolute;
+//                 width: 20px;
+//                 height: 22px;
+//                 left:0;
+//                 filter:invert(100%);
+//                 opacity:.85;
+//             }
+//             &.reader_borrow{
+//                 &:before{
+//                     background: url(../images/icon/icon_book.svg) no-repeat 0 2px;
+//                     background-size: contain;
+//                 }
+//             }
+//             &.reader_overdue{
+//                 &:before{
+//                     background: url(../images/icon/icon_notice.svg) no-repeat 0 2px;
+//                     background-size: contain;
+//                 }
+//                 span{
+//                     background: $secondaryColor;
+//                 }
+//             }
+//             &.reader_violation{
+//                 &:before{
+//                     background: url(../images/icon/icon_violation.svg) no-repeat 0 2px;
+//                     background-size: contain;
+//                 }
+//                 span{
+//                     background: $secondaryColor;
+//                 }
+//             }
+//             &.reader_booked{
+//                 &:before{
+//                     background: url(../images/icon/icon_booked.svg) no-repeat 0 2px;
+//                     background-size: contain;
+//                 }
+//             }
+//             &.reader_arrival{
+//                 &:before{
+//                     background: url(../images/icon/icon_precautions.svg) no-repeat 0 2px;
+//                     background-size: contain;
+//                 }
+//                 span{
+//                     background: $secondaryColor;
+//                 }
+//             }
+//             span{
+//                 margin:0 .312em;
+//                 min-width: 18px;
+//                 height: 18px;
+//                 border-radius: .31em;
+//                 display: inline-block;
+//                 text-align: center;
+//                 font-family: Georgia;
+//                 font-weight: bold;
+//                 line-height: 1;
+//             }
+//         }
+//     }
+//     .form_inline{
+//         input,label{
+//             margin:0 5px 0 0;
+//         }
+//         .form_grp{
+//             margin-top: 3px;
+//         }
+//         .form_grp, .check_grp{
+//             @include screen('mobile') {
+//                 padding-bottom:.5em;
+//             }
+//         }
+//         .btn_grp{
+//             float: right;
+//             padding:0;
+//             margin: .5em 0 0 0;
+//             @include screen('mobile') {
+//                 float: none;
+//                 display: block;
+//             }
+//             button{
+//                 position: relative;
+//                 height: 36px;
+//                 box-sizing: border-box;
+//                 color: #fff;
+//                 margin-left: .5em;
+//                 text-shadow: none;
+//                 padding: 0 1em;
+//                 transition: all .3s;
+//                 &:hover{
+//                     box-shadow: none;
+//                 }
+//             }
+//             .my_study{
+//                 padding-left: 2.65em;
+//                 background:$primaryColor url(../images/icon_card.png) no-repeat left 1em center;
+//                 background-size: 20px;
+//                 &:hover{
+//                     background-color: darken($primaryColor, 10);
+//                 }
+
+//             }
+//             .logout{
+//                 background: $secondaryColor;
+//                 &:hover{
+//                     background-color: darken($secondaryColor, 10);
+//                 }
+//             }
+//         }
+//     }
+// }
 
 .news, .recent_activities{
     position: relative;

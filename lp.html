@@ -36,8 +36,28 @@
                         <li><a href="#">網站導覽</a></li>
                         <li><a href="#">回首頁</a></li>
                         <li><a href="#">花蓮縣文化局</a></li>
+                        <!-- 未登入 -->
+                        <!-- <li><button type="button" id="openModal" class="login_btn">登入</button></li> -->
+                        <!-- 登入後 -->
+                        <li class="reader_area"><span class="user_name">吳美惠</span><button type="button" class="my_study">個人書房</button></li>
                     </ul>
                 </nav>
+                <!--彈出燈箱-->
+                <div id="modal1" class="modal modal_login">
+                    <form action="">
+                        <div class="form_grp form_inline">
+                            <label for="username">帳號:</label>
+                            <input name="username" type="text" placeholder="請輸入帳號">
+                        </div>
+                        <div class="form_grp form_inline">
+                            <label for="password">密碼:</label>
+                            <input name="password" type="password" placeholder="請輸入密碼">
+                        </div>
+                        <div class="btn_grp">
+                            <input name="" type="submit" value="登入" />
+                        </div>
+                    </form>
+                </div>
                 <!-- navigation End -->
                 <h1>
                     <a href="index.html"><img src="images/logo.png" alt="花蓮縣公共圖書館" /></a>

@@ -85,6 +85,9 @@ $(function() {
     _overlay.add(_sidebarClose).off().click(function() {
         hideSidebar();
     });
+    $(".navigation .login_btn").click(function() {
+        hideSidebar();
+    });
     _overlay.off("mouseenter");
     // 無障礙tab設定
     liHasChild.children('a').keyup(function() {

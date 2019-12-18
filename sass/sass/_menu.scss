@@ -329,6 +329,52 @@
                     }
                 }
             }
+            .login_btn{
+                border-right: 1px solid rgba(255, 255, 255, .5);
+                border-bottom: 1px solid rgba(255, 255, 255, .5);
+                height: 3em;
+                padding: .5em 1em .5em 2.5em;
+                border-radius: 0;
+                margin: 0;
+                width: 100%;
+                font-size: .938em;
+                text-align: left;
+                font-weight: bold;
+                background:url(../images/icon_user.png) no-repeat left 1em center;
+                background-size:1em;
+                &:hover,
+                &:focus {
+                        background-color: darken($primaryColor, 20);
+                    }
+
+            }
+            .reader_area{
+                width:100%;
+                border: 1px solid rgba(255,255,255,0.5);
+                border-left: none;
+                padding:0 1em;
+                margin-top: -1px;
+                &:hover, &:focus {
+                    background: darken($primaryColor, 20);
+                }
+                .user_name{
+                    color:#fff;
+                    padding-left:25px;
+                    background:url(../images/icon_user.png) no-repeat left top;
+                    background-size:20px;
+                    vertical-align:middle;
+                }
+                .my_study{
+                    background: url(../images/icon_card.png) no-repeat left 5px center;
+                    background-size: 18px;
+                    padding: 0 5px 0 25px;
+                    margin:5px 10px;
+                    line-height: 38px;
+                    &:hover, &:focus {
+                        background-color: $primaryColor;
+                    }
+                }
+            }
         }
         .login{
             img{

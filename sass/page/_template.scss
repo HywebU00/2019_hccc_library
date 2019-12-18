@@ -82,10 +82,10 @@ body {
 
     .main_image {
         .img-container {
-            height: 250px;
+            height: 220px;
 
             @include screen('tablet') {
-                height: 220px;
+                height: 200px;
             }
 
             @include screen('mobile') {
