@@ -279,6 +279,7 @@ form {
             textarea,
             select {
                 width: auto;
+                display:inline-block;
             }
             .form_title, .form_content{
                 display: inline-block;
