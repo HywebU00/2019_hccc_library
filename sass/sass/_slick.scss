@@ -35,6 +35,9 @@
         // @include screen('mobile') {
         //     @include aspect-ratio(5, 1.5); //Mobile版比例
         // }
+        img{
+            object-fit: contain;
+        }
     }
     .slick-prev {
         @include screen('mobile') {
